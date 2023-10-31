@@ -1,0 +1,29 @@
+{
+  "name": "cdn-refresher",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "tsc"
+  },
+  "files": ["dist", "types"],
+  "keywords": [
+    "CDN", "doge-cloud", "upyun", "ali", "huawei"
+  ],
+  "description": "Tool for refreshing the CDN cache.",
+  "author": "kmar",
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmptyDreams/RefreshCdnCache.git"
+  },
+  "homepage": "https://github.com/EmptyDreams/RefreshCdnCache/",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "@types/node-fetch": "^2.6.8",
+    "typescript": "^5.2.2"
+  }
+}
