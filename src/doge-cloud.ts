@@ -15,6 +15,8 @@ export async function invokeDogeCloud(optional: DogeCloudOptional): Promise<void
     if (optional.type != 'doge-cloud') throw '配置类型错误'
     const {accessKey, secretKey} = optional
     const body = JSON.stringify({
+        accessKey: optional.accessKey,
+        secretKey: optional.secretKey,
         rtype: optional.rtype,
         urls: optional.urls
     })
