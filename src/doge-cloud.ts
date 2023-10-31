@@ -1,5 +1,6 @@
 import * as crypto from 'crypto'
 import ToolOptional from './config'
+import fetch from 'node-fetch'
 
 export interface DogeCloudOptional extends ToolOptional {
     accessKey: string,
