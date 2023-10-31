@@ -14,7 +14,10 @@ export interface DogeCloudOptional extends ToolOptional {
 export async function invokeDogeCloud(optional: DogeCloudOptional): Promise<void> {
     if (optional.type != 'doge-cloud') throw '配置类型错误'
     const {accessKey, secretKey} = optional
-    const body = JSON.stringify(optional.urls)
+    const body = JSON.stringify({
+        rtype: optional.rtype,
+        urls: optional.urls
+    })
     const sign = crypto.createHmac('sha1', secretKey)
         .update(Buffer.from(`/cdn/refresh/add.json\n${body}`, 'utf-8'))
         .digest('hex')
@@ -29,6 +32,5 @@ export async function invokeDogeCloud(optional: DogeCloudOptional): Promise<void
     })
     if (!response.ok) throw `连接失败：${response.status}`
     const json = await response.json()
-    console.debug(json)
     if (!('code' in json) || json.code != 200) throw json
 }
