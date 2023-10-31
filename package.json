@@ -6,9 +6,16 @@
   "scripts": {
     "prepublishOnly": "tsc"
   },
-  "files": ["dist", "types"],
+  "files": [
+    "dist",
+    "types"
+  ],
   "keywords": [
-    "CDN", "doge-cloud", "upyun", "ali", "huawei"
+    "CDN",
+    "doge-cloud",
+    "upyun",
+    "ali",
+    "huawei"
   ],
   "description": "Tool for refreshing the CDN cache.",
   "author": "kmar",
@@ -19,6 +26,9 @@
   },
   "homepage": "https://github.com/EmptyDreams/RefreshCdnCache/",
   "dependencies": {
+    "@alicloud/dcdn20180115": "^1.7.0",
+    "@alicloud/openapi-client": "^0.4.6",
+    "@alicloud/tea-util": "^1.4.7",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
