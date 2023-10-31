@@ -14,6 +14,7 @@ export interface HuaweiOptional extends ToolOptional {
 
 // noinspection JSUnusedGlobalSymbols
 export async function invokeHuawei(optional: HuaweiOptional): Promise<void> {
+    if (optional.type != 'huawei') throw '配置类型错误'
     const Signer = require('./lib/huawei-api.js')
     // noinspection JSUnresolvedReference
     const sig = new Signer.Signer()
