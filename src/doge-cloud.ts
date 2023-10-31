@@ -28,6 +28,7 @@ export async function invokeDogeCloud(optional: DogeCloudOptional): Promise<void
         }
     })
     if (!response.ok) throw `连接失败：${response.status}`
+    console.debug(response)
     const json = await response.json()
     if (!('code' in json)) throw json
 }
