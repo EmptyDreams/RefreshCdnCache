@@ -20,6 +20,12 @@ export async function invokeDogeCloud(optional: DogeCloudOptional): Promise<void
         rtype: optional.rtype,
         urls: optional.urls
     })
+    console.debug({
+        accessKey: optional.accessKey,
+        secretKey: optional.secretKey,
+        rtype: optional.rtype,
+        urls: optional.urls
+    })
     const sign = crypto.createHmac('sha1', secretKey)
         .update(Buffer.from(`/cdn/refresh/add.json\n${body}`, 'utf-8'))
         .digest('hex')
