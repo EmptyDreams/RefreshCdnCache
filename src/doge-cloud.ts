@@ -15,17 +15,12 @@ export interface DogeCloudOptional extends ToolOptional {
 export async function invokeDogeCloud(optional: DogeCloudOptional): Promise<void> {
     if (optional.type != 'doge-cloud') throw '配置类型错误'
     const {accessKey, secretKey} = optional
+    // noinspection SpellCheckingInspection
     const body = JSON.stringify({
         accessKey: optional.accessKey,
         secretKey: optional.secretKey,
         rtype: optional.rtype,
-        urls: optional.urls
-    })
-    console.debug({
-        accessKey: optional.accessKey,
-        secretKey: optional.secretKey,
-        rtype: optional.rtype,
-        urls: optional.urls
+        urls: optional.urls.join(',')
     })
     const sign = crypto.createHmac('sha1', secretKey)
         .update(Buffer.from(`/cdn/refresh/add.json\n${body}`, 'utf-8'))
